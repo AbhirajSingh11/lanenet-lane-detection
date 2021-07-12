@@ -74,6 +74,7 @@ def test_lanenet(image_path, weights_path):
     :param weights_path:
     :return:
     """
+    image_path = 'C:/Users/Abhiraj/Documents/GitHub/lanenet-lane-detection/data/tusimple_test_image/0.jpg'
     assert ops.exists(image_path), '{:s} not exist'.format(image_path)
 
     LOG.info('Start reading image and preprocessing')
@@ -109,7 +110,7 @@ def test_lanenet(image_path, weights_path):
     saver = tf.train.Saver(variables_to_restore)
 
     with sess.as_default():
-        saver.restore(sess=sess, save_path=weights_path)
+        saver.restore(sess=sess, save_path='C:/Users/Abhiraj/Documents/GitHub/lanenet-lane-detection/tools/model/tusimple_lanenet')
 
         t_start = time.time()
         loop_times = 500
